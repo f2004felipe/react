@@ -9,8 +9,6 @@ import { useState } from "react";
 import LoginPage from "./components/LoginPage/LoginPage";
 import VehicleForm from "./components/RegisterPage/VehicleForm";
 import VehicleList from "./components/RegisterPage/VehicleList";
-import VehicleForm from './VehicleForm';
-import VehicleDisplay from './VehicleDisplay';
 
 function App() {
   const [vehicles, setVehicles] = useState([]);
@@ -70,17 +68,5 @@ function App() {
     </Router>
   );
 }
-
-const App = () => {
-  const [vehicle, setVehicle] = useState(null);
-
-  return (
-    <div className="pageContainer">
-      <h1>Cadastro de Veículos</h1>
-      <VehicleForm onVehicleSubmit={setVehicle} />
-      <VehicleDisplay vehicle={vehicle} />
-    </div>
-  );
-};
 
 export default App;

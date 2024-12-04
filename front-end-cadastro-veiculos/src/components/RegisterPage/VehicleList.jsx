@@ -1,19 +1,21 @@
 import PropTypes from 'prop-types';
+import styles from './VehicleList.css';
 import { Button } from '@mui/material';
 
-const VehicleList = ({ vehicles, onRemoveVehicle, onEditVehicle }) => {
+function VehicleList({ vehicles }) {
   return (
-    <ul>
+    <ul className="vehicleListContainer">
       {vehicles.map((vehicle, index) => (
-        <li key={index}>
-          {vehicle.marca} {vehicle.modelo} ({vehicle.ano}) - Placa: {vehicle.placa}
-          <Button onClick={() => onEditVehicle(index)}>Editar</Button>
-          <Button onClick={() => onRemoveVehicle(index)}>Remover</Button>
+        <li key={index} className="vehicleListItem">
+          <span className="vehicleText">{vehicle.name}</span>
+          <button className="vehicleButton">Editar</button>
+          <button className="vehicleButton">Excluir</button>
         </li>
       ))}
     </ul>
   );
-};
+}
+
 
 VehicleList.propTypes = {
   vehicles: PropTypes.arrayOf(
